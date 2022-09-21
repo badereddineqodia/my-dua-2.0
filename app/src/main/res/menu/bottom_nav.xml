@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/mainFragment"
+        android:icon="@drawable/ic_calendar"
+        android:title="Today" />
+
+    <item
+        android:id="@+id/nav_prayers"
+        android:icon="@drawable/c7"
+        android:title="Prayers" />
+
+    <item
+        android:id="@+id/surahFragment"
+        android:icon="@drawable/ic_quran_2"
+        android:title="Quran" />
+
+
+
+    <item
+        android:id="@+id/nav_naats"
+        android:icon="@drawable/naats"
+        android:title="Naats" />
+
+    <item
+        android:id="@+id/moreFragment"
+        android:icon="@drawable/ic_menu"
+        android:title="More" />
+</menu>

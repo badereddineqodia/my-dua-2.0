@@ -1,176 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:keepScreenOn="true"
-  android:layoutDirection="ltr">
-
-  <LinearLayout
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="?attr/background_color"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layoutDirection="ltr"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.districthut.islam.Activities.HomeActivity">
 
-    <LinearLayout
-      android:id="@+id/header_container"
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:orientation="vertical">
 
-      <LinearLayout
+    <FrameLayout
+        android:id="@+id/content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        ads:layout_constraintBottom_toTopOf="@id/bottomMenu"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent"></FrameLayout>
+
+<!--    </FrameLayout>-->
+
+<!--    <androidx.viewpager.widget.ViewPager-->
+<!--        android:id="@+id/viewpager"-->
+<!--        android:layout_width="0dp"-->
+<!--        android:layout_height="0dp"-->
+<!--        android:layout_marginBottom="32dp"-->
+<!--        ads:layout_constraintBottom_toBottomOf="parent"-->
+<!--        ads:layout_constraintEnd_toEndOf="parent"-->
+<!--        ads:layout_constraintStart_toStartOf="parent"-->
+<!--        ads:layout_constraintTop_toTopOf="parent" />-->
+
+    <com.hk.kbottomnavigation.KBottomNavigation
+        android:id="@+id/bottomMenu"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center_vertical">
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        app:mbn_backgroundBottomColor="?attr/bottomBarBackground"
+        app:mbn_countBackgroundColor="#ff6f00"
+        app:mbn_countTextColor="?attr/text_color"
+        app:mbn_defaultIconColor="#90a4ae"
+        app:mbn_rippleColor="#2f424242"
+        app:mbn_selectedIconColor="#168e84"
+        app:mbn_shadowColor="#1f212121" />
 
-        <LinearLayout
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="2"
-          android:paddingTop="4dp"
-          android:paddingBottom="4dp"
-          android:paddingStart="8dp"
-          android:paddingEnd="8dp"
-          android:gravity="left|center"
-          tools:ignore="RtlHardcoded">
 
-          <TextView
-            android:id="@+id/juz_value_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="4dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            tools:ignore="RtlSymmetry" />
-
-          <TextView
-            android:id="@+id/juz_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="8dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/juz"
-            tools:ignore="RtlSymmetry" />
-
-          <TextView
-            android:id="@+id/manzil_value_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="4dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            tools:ignore="RtlSymmetry" />
-
-          <TextView
-            android:id="@+id/manzil_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/manzil" />
-
-        </LinearLayout>
-
-        <TextView
-          android:id="@+id/page_v"
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="1"
-          android:paddingTop="4dp"
-          android:paddingBottom="4dp"
-          android:paddingStart="8dp"
-          android:paddingEnd="8dp"
-          android:ellipsize="end"
-          android:gravity="center"
-          android:maxLines="1"
-          android:textAlignment="center" />
-
-        <LinearLayout
-          android:layout_width="0dp"
-          android:layout_height="wrap_content"
-          android:layout_weight="2"
-          android:paddingTop="4dp"
-          android:paddingBottom="4dp"
-          android:paddingStart="8dp"
-          android:paddingEnd="8dp"
-          android:gravity="right|center"
-          tools:ignore="RtlHardcoded">
-
-          <TextView
-            android:id="@+id/surah_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:paddingRight="4dp"
-            android:ellipsize="end"
-            android:maxLines="1"
-            tools:ignore="RtlSymmetry" />
-
-          <TextView
-            android:id="@+id/surah_value_v"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1" />
-
-        </LinearLayout>
-      </LinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accentTrans2" />
-
-    </LinearLayout>
-
-    <androidx.viewpager2.widget.ViewPager2
-      android:id="@+id/pager"
-      android:layout_width="match_parent"
-      android:layout_height="0dp"
-      android:layout_weight="1"
-      android:layoutDirection="rtl" />
-
-  </LinearLayout>
-
-  <com.mirfatif.noorulhuda.ui.base.MyFrameLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <ImageView
-      android:id="@+id/left_arrow"
-      android:layout_width="64dp"
-      android:layout_height="64dp"
-      android:layout_gravity="left|center_vertical"
-      android:src="@drawable/left_arrow"
-      android:visibility="gone"
-      tools:ignore="ContentDescription,RtlHardcoded" />
-
-    <ImageView
-      android:id="@+id/right_arrow"
-      android:layout_width="64dp"
-      android:layout_height="64dp"
-      android:layout_gravity="right|center_vertical"
-      android:rotation="180"
-      android:src="@drawable/left_arrow"
-      android:visibility="gone"
-      tools:ignore="ContentDescription,RtlHardcoded" />
-
-    <androidx.core.widget.ContentLoadingProgressBar
-      android:id="@+id/progress_bar"
-      style="@style/Widget.AppCompat.ProgressBar"
-      android:layout_width="48dp"
-      android:layout_height="48dp"
-      android:layout_marginTop="64dp"
-      android:layout_gravity="center_horizontal|top"
-      android:background="@drawable/pg_bar_circular_bg"
-      android:indeterminate="true"
-      android:indeterminateBehavior="cycle"
-      android:visibility="gone" />
-
-    <include
-      android:id="@+id/bottom_bar"
-      layout="@layout/bottom_bar" />
-
-  </com.mirfatif.noorulhuda.ui.base.MyFrameLayout>
-
-</FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

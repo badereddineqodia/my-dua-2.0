@@ -6,7 +6,7 @@
   <application tools:ignore="AllowBackup">
 
     <provider
-      android:authorities="com.mirfatif.noorulhuda.debug.FileProvider"
+      android:authorities="com.mianasad.myislam.debug.FileProvider"
       android:name="androidx.core.content.FileProvider"
       tools:ignore="ExportedContentProvider"
       tools:replace="android:authorities" />

@@ -1,56 +1,127 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="green">#6F8F63</color>
-  <color name="greenTrans1">#E66F8F63</color>
-  <color name="greenTrans2">#806F8F63</color>
-  <color name="greenTrans3">#406F8F63</color>
-  <color name="greenDark1">#65825A</color>
-  <color name="greenDark2">#5B7551</color>
+    <color name="colorPrimary">#0e305b</color>
+    <color name="colorPrimaryDark">#168F59</color>
+    <color name="colorPrimaryLight">#233567</color>
+    <color name="colorPrimaryLightest">#5D6FA3</color>
+    <color name="colorAccent">#2c6197</color>
+    <color name="black">#000000</color>
+    <color name="black_transparent">#CB000000</color>
+    <color name="overlay_color">#9E000000</color>
+    <color name="gray">#E9E9E9</color>
+    <color name="graydark">#878787</color>
 
-  <color name="blue">#2196F3</color>
-  <color name="blueTrans1">#E62196F3</color>
-  <color name="blueTrans2">#802196F3</color>
-  <color name="blueTrans3">#402196F3</color>
-  <color name="blueDark1">#208DE6</color>
-  <color name="blueDark2">#1E85D9</color>
+    <color name="background_gray">#f3f4f6</color>
+    <color name="top_bar_bg">#2c6197</color>
+    <color name="selected_yellow">#FFCC00</color>
 
-  <color name="red">#BA8787</color>
-  <color name="redTrans1">#E6BA8787</color>
-  <color name="redTrans2">#80BA8787</color>
-  <color name="redTrans3">#40BA8787</color>
-  <color name="redDark1">#AD7F7F</color>
-  <color name="redDark2">#A17575</color>
+    <!-- THEME DEFAULT -->
+    <color name="green_primary">#4CAF50</color>
+    <color name="green_primary_dark">#1B5E20</color>
+    <color name="green_accent">#B9F6CA</color>
+    <color name="separator">#EFEFEF</color>
+    <color name="green">#4CAF50</color>
+    <color name="reddish_pink">#F43682</color>
 
-  <color name="gray">#86909E</color>
-  <color name="grayTrans1">#E686909E</color>
-  <color name="grayTrans2">#8086909E</color>
-  <color name="grayTrans3">#4086909E</color>
-  <color name="grayDark1">#7C8591</color>
-  <color name="grayDark2">#717985</color>
+    <!-- THEME TEAL -->
+    <color name="teal_primary">#009688</color>
+    <color name="teal_primary_dark">#00796B</color>
+    <color name="teal_primary_light">#B2DFDB</color>
+    <color name="teal_accent">#4CAF50</color>
+    <color name="teal_primary_text">#212121</color>
+    <color name="teal_secondary_text">#727272</color>
+    <color name="teal_icons">#FFFFFF</color>
+    <color name="teal_separator">#4DB6B6B6</color>
 
-  <color name="disabledState">#7F7F7F</color>
+    <color name="hadithcolor">#CCFF0000</color>
+    <color name="colorFeeling">#0c7c75</color>
+    <color name="colorGreen">#0b6e0b</color>
+    <color name="colorCat">#dadada</color>
+    <color name="lightgrey">#c1dadada</color>
+    <color name="darkgrey">#2b2b2b</color>
+    <color name="white">#ffffff</color>
+    <color name="transparent_white">#A3FFFFFF</color>
+    <color name="transparent">#00FFFFFF</color>
+    <color name="transparent_white2">#C9FFFFFF</color>
+    <color name="backgroundColor">@color/background_gray</color>
 
-  <color name="fgSharp2">@android:color/black</color>
-  <color name="fgSharp1">#E6000000</color>
-  <color name="fgMedium">#CC000000</color>
-  <color name="fgLight1">#B3000000</color>
-  <color name="fgLight2">#99000000</color>
 
-  <color name="bgSharp2">@android:color/white</color>
-  <color name="bgSharp1">#F2F2F2</color>
-  <color name="bgMedium">#E6E6E6</color>
-  <color name="bgLight1">#D9D9D9</color>
-  <color name="bgLight2">#CCCCCC</color>
+    <color name="skin_light">#FFFFFF</color>
+    <color name="skin_dark">#eee</color>
+    <color name="surahTitleColor">#14662c</color>
+    <color name="surahTitleDescColor">#717171</color>
+    <color name="dialog_title_background_color">#0e411d</color>
+    <color name="mushaf2">#14662c</color>
+    <color name="mushaf3">#0e411d</color>
+    <color name="light_grey">#e4e4e4</color>
+    <color name="dark_grey">#464646</color>
+    <color name="light_green">#9aa992</color>
+    <color name="light_blue">#92a0a9</color>
+    <color name="light_pink">#a992a1</color>
+    <color name="light_green_g">#b37fbe5f</color>
 
-  <color name="dynamicBgTrans">#B3FFFFFF</color>
+    <color name="background_clr">#f2f2f2</color>
+    <color name="background_clr2">#ededed</color>
+    <color name="text_clr">#4aa59e</color>
+    <color name="gray_clr">#575757</color>
+    <color name="halalPlacesTextClr">#22877b</color>
+    <color name="rectangleBoxClr">#168e84</color>
 
-  <color name="widgetTextDark3">@android:color/black</color>
-  <color name="widgetTextDark2">#E6000000</color>
-  <color name="widgetTextDark1">#CC000000</color>
-  <color name="widgetTextLight3">@android:color/white</color>
-  <color name="widgetTextLight2">#E6FFFFFF</color>
-  <color name="widgetTextLight1">#CCFFFFFF</color>
-  <color name="widgetBgDark">#B3000000</color>
-  <color name="widgetBgLight">#B3FFFFFF</color>
+<!--    <color name="green">#6F8F63</color>-->
+    <color name="greenTrans1">#E66F8F63</color>
+    <color name="greenTrans2">#806F8F63</color>
+    <color name="greenTrans3">#406F8F63</color>
+    <color name="greenDark1">#65825A</color>
+    <color name="greenDark2">#5B7551</color>
+
+    <color name="blue">#2196F3</color>
+    <color name="blueTrans1">#E62196F3</color>
+    <color name="blueTrans2">#802196F3</color>
+    <color name="blueTrans3">#402196F3</color>
+    <color name="blueDark1">#208DE6</color>
+    <color name="blueDark2">#1E85D9</color>
+
+    <color name="red">#BA8787</color>
+    <color name="redTrans1">#E6BA8787</color>
+    <color name="redTrans2">#80BA8787</color>
+    <color name="redTrans3">#40BA8787</color>
+    <color name="redDark1">#AD7F7F</color>
+    <color name="redDark2">#A17575</color>
+
+<!--    <color name="gray">#86909E</color>-->
+    <color name="grayTrans1">#E686909E</color>
+    <color name="grayTrans2">#8086909E</color>
+    <color name="grayTrans3">#4086909E</color>
+    <color name="grayDark1">#7C8591</color>
+    <color name="grayDark2">#717985</color>
+
+    <color name="disabledState">#7F7F7F</color>
+
+    <color name="fgSharp2">@android:color/black</color>
+    <color name="fgSharp1">#E6000000</color>
+    <color name="fgMedium">#CC000000</color>
+    <color name="fgLight1">#B3000000</color>
+    <color name="fgLight2">#99000000</color>
+
+    <color name="bgSharp2">@android:color/white</color>
+    <color name="bgSharp1">#F2F2F2</color>
+    <color name="bgMedium">#E6E6E6</color>
+    <color name="bgLight1">#D9D9D9</color>
+    <color name="bgLight2">#CCCCCC</color>
+    <color name="icon_color">#8E8E8E</color>
+
+    <color name="dynamicBgTrans">#B3FFFFFF</color>
+
+    <color name="widgetTextDark3">@android:color/black</color>
+    <color name="widgetTextDark2">#E6000000</color>
+    <color name="widgetTextDark1">#CC000000</color>
+    <color name="widgetTextLight3">@android:color/white</color>
+    <color name="widgetTextLight2">#E6FFFFFF</color>
+    <color name="widgetTextLight1">#CCFFFFFF</color>
+    <color name="widgetBgDark">#B3000000</color>
+    <color name="widgetBgLight">#B3FFFFFF</color>
+
+    <color name="bead_color">#168e84</color>
+    <color name="thread_color">#1c1c1c</color>
 
 </resources>

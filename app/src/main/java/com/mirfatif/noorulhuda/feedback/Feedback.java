@@ -9,6 +9,7 @@ import androidx.coordinatorlayout.widget.CoordinatorLayout.LayoutParams;
 import com.mirfatif.noorulhuda.App;
 import com.mirfatif.noorulhuda.R;
 import com.mirfatif.noorulhuda.databinding.ActivityMainBinding;
+import com.mirfatif.noorulhuda.databinding.ActivityMainsBinding;
 import com.mirfatif.noorulhuda.feedback.MySwipeDismissBehavior.OnDismissListener;
 import com.mirfatif.noorulhuda.quran.MainActivity;
 import com.mirfatif.noorulhuda.util.Utils;
@@ -16,7 +17,7 @@ import com.mirfatif.noorulhuda.util.Utils;
 public class Feedback {
 
   private final MainActivity mA;
-  private final ActivityMainBinding mB;
+  private final ActivityMainsBinding mB;
 
   public Feedback(MainActivity activity) {
     mA = activity;

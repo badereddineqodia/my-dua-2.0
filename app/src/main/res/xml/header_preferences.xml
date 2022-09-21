@@ -1,0 +1,66 @@
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory>
+
+    <Preference
+        app:icon="@drawable/ic_language"
+        app:key="language"
+        app:title="Language" />
+
+    <Preference
+        app:fragment="com.districthut.islam.Activities.SettingsActivity$LanguageFragment"
+        app:icon="@drawable/ic_colors"
+        app:key="colors"
+        app:title="Color Theme" />
+
+        <Preference
+            app:icon="@drawable/ic_clock"
+            app:key="prayer_timings"
+            app:title="Prayer Times" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        app:isPreferenceVisible="false">
+
+
+    <Preference
+        app:icon="@drawable/ic_book"
+        app:key="quran"
+        app:title="Quran"
+        app:isPreferenceVisible="false"/>
+
+    <Preference
+        app:icon="@drawable/ic_calendar"
+        app:key="calendar"
+        app:title="Islamic Calendar"
+        app:isPreferenceVisible="false"/>
+
+    <Preference
+        app:icon="@drawable/ic_place"
+        app:key="place"
+        app:title="Halal Places &amp; Mosques"
+        app:isPreferenceVisible="false"/>
+    </PreferenceCategory>
+
+
+    <PreferenceCategory>
+    <Preference
+        app:icon="@drawable/ic_document"
+        app:key="terms"
+        app:title="Terms &amp; Conditions" />
+
+    <Preference
+        app:icon="@drawable/ic_document"
+        app:key="privacy"
+        app:title="Privacy Policy" />
+
+    <Preference
+        app:icon="@drawable/ic_about"
+        app:key="about"
+        app:title="About" />
+    </PreferenceCategory>
+
+
+
+</PreferenceScreen>

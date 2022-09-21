@@ -1,0 +1,216 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/backgroundColor"
+    tools:context="com.districthut.islam.Fragments.SendFundRequestFragment">
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Neumorph.CardView"
+        app:neumorph_shadowElevation="2dp"
+        app:neumorph_shadowColorLight="#fff"
+        app:neumorph_shadowColorDark="#cfcfcf"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shapeType="flat"
+        app:neumorph_inset="12dp"
+        app:neumorph_insetStart="12dp"
+        app:neumorph_insetEnd="12dp"
+        app:neumorph_insetTop="12dp"
+        app:neumorph_insetBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/cause"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Title"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="@dimen/_10mdp" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100mdp"
+        style="@style/Widget.Neumorph.CardView"
+        app:neumorph_shadowElevation="2dp"
+        app:neumorph_shadowColorLight="#fff"
+        app:neumorph_shadowColorDark="#cfcfcf"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shapeType="flat"
+        app:neumorph_inset="12dp"
+        app:neumorph_insetStart="12dp"
+        app:neumorph_insetEnd="12dp"
+        app:neumorph_insetTop="12dp"
+        app:neumorph_insetBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/description"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:gravity="start"
+            android:hint="Briefly describe your cause"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="@dimen/_10mdp" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Neumorph.CardView"
+        app:neumorph_shadowElevation="2dp"
+        app:neumorph_shadowColorLight="#fff"
+        app:neumorph_shadowColorDark="#cfcfcf"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shapeType="flat"
+        app:neumorph_inset="12dp"
+        app:neumorph_insetStart="12dp"
+        app:neumorph_insetEnd="12dp"
+        app:neumorph_insetTop="12dp"
+        app:neumorph_insetBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/goal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Donation Goal (USD)"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="@dimen/_10mdp" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Neumorph.CardView"
+        app:neumorph_shadowElevation="2dp"
+        app:neumorph_shadowColorLight="#fff"
+        app:neumorph_shadowColorDark="#cfcfcf"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shapeType="flat"
+        app:neumorph_inset="12dp"
+        app:neumorph_insetStart="12dp"
+        app:neumorph_insetEnd="12dp"
+        app:neumorph_insetTop="12dp"
+        app:neumorph_insetBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/link"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Link from gofundme.com"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="@dimen/_10mdp" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Neumorph.CardView"
+        app:neumorph_shadowElevation="2dp"
+        app:neumorph_shadowColorLight="#fff"
+        app:neumorph_shadowColorDark="#cfcfcf"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shapeType="flat"
+        app:neumorph_inset="12dp"
+        app:neumorph_insetStart="12dp"
+        app:neumorph_insetEnd="12dp"
+        app:neumorph_insetTop="12dp"
+        app:neumorph_insetBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <EditText
+            android:id="@+id/location"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:hint="Location"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="@dimen/_10mdp" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <soup.neumorphism.NeumorphCardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="@style/Widget.Neumorph.CardView"
+        app:neumorph_shadowElevation="2dp"
+        app:neumorph_shadowColorLight="#fff"
+        app:neumorph_shadowColorDark="#cfcfcf"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shapeType="flat"
+        app:neumorph_inset="12dp"
+        app:neumorph_insetStart="12dp"
+        app:neumorph_insetEnd="12dp"
+        app:neumorph_insetTop="12dp"
+        app:neumorph_insetBottom="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" >
+
+        <Button
+            android:id="@+id/sendBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@drawable/transparent"
+            android:ems="10"
+            android:enabled="false"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:padding="@dimen/_10mdp"
+            android:text="Send Request" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+
+</LinearLayout>

@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardBackgroundColor="?attr/background_color"
+    android:layout_margin="@dimen/_10mdp"
+    app:cardCornerRadius="@dimen/_10mdp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+
+    <soup.neumorphism.NeumorphCardView
+        style="@style/Widget.Neumorph.CardView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:neumorph_inset="12dp"
+        app:neumorph_insetBottom="12dp"
+        app:neumorph_insetEnd="12dp"
+        app:neumorph_insetStart="12dp"
+        app:neumorph_insetTop="12dp"
+        app:neumorph_lightSource="leftTop"
+        app:neumorph_shadowColorDark="?attr/shadow_dark"
+        app:neumorph_shadowColorLight="?attr/shadow_light"
+        app:neumorph_shadowElevation="2dp"
+        app:neumorph_shapeType="flat">
+
+        <EditText
+            android:id="@+id/memoBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:background="@drawable/transparent"
+            android:ems="10"
+            android:hint="What to remind?"
+            android:inputType="text"
+            android:padding="@dimen/_10mdp"
+            android:textColor="?attr/text_color"
+            android:textColorHint="?attr/text_color" />
+
+    </soup.neumorphism.NeumorphCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:neumorph_inset="12dp"
+            app:neumorph_insetBottom="12dp"
+            app:neumorph_insetEnd="12dp"
+            app:neumorph_insetStart="12dp"
+            app:neumorph_insetTop="12dp"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="?attr/shadow_dark"
+            app:neumorph_shadowColorLight="?attr/shadow_light"
+            app:neumorph_shadowElevation="2dp"
+            app:neumorph_shapeType="flat">
+
+            <TextView
+                android:id="@+id/dateBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent"
+                android:drawableLeft="@drawable/ic_calendar"
+                android:drawablePadding="@dimen/_10mdp"
+                android:ems="10"
+                android:hint="Select Hijri Date"
+                android:inputType="text"
+                android:padding="@dimen/_10mdp"
+                android:textColor="?attr/text_color"
+                android:textColorHint="?attr/text_color" />
+
+        </soup.neumorphism.NeumorphCardView>
+
+        <soup.neumorphism.NeumorphCardView
+            style="@style/Widget.Neumorph.CardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:neumorph_inset="12dp"
+            app:neumorph_insetBottom="12dp"
+            app:neumorph_insetEnd="12dp"
+            app:neumorph_insetStart="12dp"
+            app:neumorph_insetTop="12dp"
+            app:neumorph_lightSource="leftTop"
+            app:neumorph_shadowColorDark="?attr/shadow_dark"
+            app:neumorph_shadowColorLight="?attr/shadow_light"
+            app:neumorph_shadowElevation="2dp"
+            app:neumorph_shapeType="flat">
+
+            <TextView
+                android:id="@+id/timeBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/transparent"
+                android:drawableLeft="@drawable/ic_clock"
+                android:drawablePadding="@dimen/_10mdp"
+                android:ems="10"
+                android:inputType="text"
+                android:padding="@dimen/_10mdp"
+                android:text="Time to remind?"
+                android:textColor="?attr/text_color"
+                android:textColorHint="?attr/text_color" />
+
+        </soup.neumorphism.NeumorphCardView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/addReminderBtn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/green_accent"
+        app:backgroundTint="@null"
+        android:text="Add Reminder"
+        android:textColor="@color/black" />
+
+</LinearLayout>
+</androidx.cardview.widget.CardView>

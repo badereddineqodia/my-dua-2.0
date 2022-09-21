@@ -1,20 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mirfatif.noorulhuda.ui.base.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:keepScreenOn="true"
-  android:orientation="vertical">
-
-
-  <com.google.android.material.tabs.TabLayout
-    android:id="@+id/tabs"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content" />
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="?attr/background_color"
+    tools:context="com.districthut.islam.Activities.DuaActivity">
 
-  <androidx.viewpager2.widget.ViewPager2
-    android:id="@+id/pager"
-    android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:layout_weight="1" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/dua_content"
+        android:layout_above="@+id/banner_container">
+    </FrameLayout>
 
-</com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
+    <LinearLayout
+        android:id="@+id/banner_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        />
+
+<!--    <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"-->
+<!--        android:id="@+id/adView"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        android:visibility="gone"-->
+<!--        ads:adSize="SMART_BANNER"-->
+<!--        ads:adUnitId="@string/DUA_BANNER_AD"></com.google.android.gms.ads.AdView>-->
+</RelativeLayout>

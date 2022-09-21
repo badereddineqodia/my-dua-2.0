@@ -1,149 +1,466 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C) 2015 The Android Open Source Project
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~      http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+-->
+
 <resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="SmallRoundedShadow">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">5dp</item>
 
-  <!-- Application theme -->
-  <style name="AppTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
-    <item name="android:windowBackground">@drawable/splash_background</item>
-    <item name="android:statusBarColor">@android:color/transparent</item>
-    <item name="windowActionBar">false</item>
-    <item name="windowNoTitle">true</item>
-    <item name="android:windowContentOverlay">@null</item>
-    <item name="android:navigationBarColor">?android:attr/colorBackground</item>
-  </style>
+        <!-- Or if wants different radii depending on the corner. -->
+<!--        <item name="neumorph_cornerSizeTopLeft">16dp</item>-->
+<!--        <item name="neumorph_cornerSizeTopRight">16dp</item>-->
+<!--        <item name="neumorph_cornerSizeBottomLeft">16dp</item>-->
+<!--        <item name="neumorph_cornerSizeBottomRight">16dp</item>-->
+    </style>
+    <style name="CustomShapeAppearance">
+        <item name="neumorph_cornerFamily">rounded</item>
+        <item name="neumorph_cornerSize">5dp</item>
 
-  <!-- Base activity theme -->
-  <!-- MaterialComponents theme adds margin at the end of overflow menu items -->
-  <style name="AppThemeGreen" parent="Theme.AppCompat.DayNight">
+        <!-- Or if wants different radii depending on the corner. -->
+        <item name="neumorph_cornerSizeTopLeft">16dp</item>
+        <item name="neumorph_cornerSizeTopRight">16dp</item>
+        <item name="neumorph_cornerSizeBottomLeft">16dp</item>
+        <item name="neumorph_cornerSizeBottomRight">16dp</item>
+    </style>
+    <style name="RatingBar" parent="Theme.AppCompat">
+        <item name="colorControlNormal">@color/dark_grey</item>
+        <item name="colorControlActivated">@color/selected_yellow</item>
+    </style>
 
-    <!-- Define custom attributes unique to the theme -->
-    <item name="accent">@color/green</item>
-    <item name="accentTrans1">@color/greenTrans1</item>
-    <item name="accentTrans2">@color/greenTrans2</item>
-    <item name="accentTrans3">@color/greenTrans3</item>
-    <item name="accentDark1">@color/greenDark1</item>
-    <item name="accentDark2">@color/greenDark2</item>
-    <item name="app_icon">@drawable/icon_green</item>
 
-    <!-- Preference Group Titles, Dialog Button Text -->
-    <item name="colorAccent">?attr/accent</item>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name = "android:windowBackground">#f4f4f4</item>
+        <item name="background_color">#f4f4f4</item>
+        <item name="text_color">#4D4D4D</item>
+        <item name="android:textColor">#4D4D4D</item>
+        <item name="namaz_color">#4D4D4D</item>
+        <item name="menu_color">#4D4D4D</item>
+        <item name="button_color">@color/colorAccent</item>
+        <item name="shadow_dark">#BFBFBF</item>
+        <item name="shadow_light">#fff</item>
+        <item name="bottomBarBackground">#fff</item>
+        <item name="actionBar">#fff</item>
+        <item name="android:textColorPrimary">@android:color/white</item>
+        <item name="android:textColorSecondary">@android:color/white</item>
 
-    <!-- Check Boxes, Radio Buttons, Switch Active State, Indeterminate Progress Bar.
-      If not set, uses colorAccent -->
-    <!--<item name="colorControlActivated">?attr/accent</item>-->
+    </style>
 
-    <!-- Status Bar -->
-    <item name="colorPrimaryDark">?attr/accentDark2</item>
+    <!-- Base application theme. -->
+    <style name="AppTheme.ActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name = "android:windowBackground">#f4f4f4</item>
+        <item name="background_color">#f4f4f4</item>
+        <item name="text_color">#4D4D4D</item>
+        <item name="android:textColor">#4D4D4D</item>
+        <item name="namaz_color">#4D4D4D</item>
+        <item name="menu_color">#4D4D4D</item>
+        <item name="button_color">@color/colorAccent</item>
+        <item name="shadow_dark">#BFBFBF</item>
+        <item name="shadow_light">#fff</item>
+        <item name="bottomBarBackground">#fff</item>
+        <item name="actionBar">#fff</item>
 
-    <!-- Action Bar, CircularProgressIndicator, Page Tabs indicator -->
-    <item name="colorPrimary">?attr/accentDark1</item>
 
-    <!-- Custom Styles -->
-    <item name="android:spinnerItemStyle">@style/SpinnerItemStyle</item>
-    <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+    </style>
 
-    <!-- Do not resize layout when switching between
-      SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN and SYSTEM_UI_FLAG_FULLSCREEN -->
-    <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">never</item>
-  </style>
+    <!-- dark application theme. -->
+    <style name="darkTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000</item>
+        <item name="colorPrimaryDark">#000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name = "android:windowBackground">#1b1e20</item>
+        <item name="menu_color">#168E84</item>
+        <item name="background_color">#1b1e20</item>
+        <item name="text_color">#ffffff</item>
+        <item name="android:textColor">#ffff</item>
+        <item name="button_color">#ffff</item>
+        <item name="namaz_color">#168E84</item>
+        <item name="shadow_dark">#111315</item>
+        <item name="shadow_light">#25282b</item>
+        <item name="bottomBarBackground">#26272b</item>
+        <item name="actionBar">#1f2022</item>
+        <item name="titleTextAppearance">@style/ToolbarTheme.Title.Dark</item>
 
-  <style name="SpinnerItemStyle">
-    <item name="android:textStyle">bold</item>
-    <item name="android:textColor">@color/spinner_color</item>
-  </style>
+        <item name="colorControlNormal">#168E84</item>
 
-  <style name="AlertDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
-    <item name="windowFixedWidthMajor">65%</item>
-    <item name="windowFixedWidthMinor">95%</item>
+    </style>
 
-    <!-- Dialog Button Text. Required when using MaterialComponents theme for Application or Activity-->
-    <!--<item name="buttonBarButtonStyle">@style/ButtonBarStyle</item>-->
+    <style name="MaterialTheme" parent="Theme.MaterialComponents.Light">
+        <item name="colorPrimary">#FFFFFF</item>
+        <item name="colorPrimaryDark">#A3A6A5A5</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name = "android:windowBackground">#f4f4f4</item>
+        <item name="background_color">#f4f4f4</item>
+        <item name="text_color">#4D4D4D</item>
+        <item name="android:textColor">#4D4D4D</item>
+        <item name="namaz_color">#4D4D4D</item>
+        <item name="menu_color">#4D4D4D</item>
+        <item name="button_color">@color/colorAccent</item>
+        <item name="shadow_dark">#BFBFBF</item>
+        <item name="shadow_light">#fff</item>
+        <item name="bottomBarBackground">#fff</item>
+        <item name="actionBar">#fff</item>
+        <item name="colorControlNormal">#000</item>
+    </style>
 
-    <!-- RadioButton color in ChoiceItem list -->
-    <item name="colorAccent">?attr/accent</item>
 
-    <!-- CircularProgressIndicator color -->
-    <item name="colorPrimary">?attr/accentDark1</item>
+    <style name="MaterialTheme.NoActionBar" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name = "android:windowBackground">#f4f4f4</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+    </style>
 
-    <item name="colorPrimaryDark">?attr/accentDark2</item>
-  </style>
+    <style name="MaterialTheme.NoActionBarDark">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+        <item name = "android:windowBackground">#1b1e20</item>
+        <item name="background_color">#1b1e20</item>
+        <item name="text_color">#ffff</item>
+        <item name="button_color">#ffff</item>
+        <item name="namaz_color">#168E84</item>
+        <item name="shadow_dark">#111315</item>
+        <item name="shadow_light">#25282b</item>
+        <item name="menu_color">#168E84</item>
+        <item name="actionBar">#1f2022</item>
+        <item name="bottomBarBackground">#26272b</item>
+    </style>
 
-  <style name="ButtonBarStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
-    <item name="android:textColor">@color/button_text</item>
-  </style>
 
-  <!-- Override custom attributes unique to the themes -->
-  <style name="AppThemeBlue" parent="AppThemeGreen">
-    <item name="accent">@color/blue</item>
-    <item name="accentTrans1">@color/blueTrans1</item>
-    <item name="accentTrans2">@color/blueTrans2</item>
-    <item name="accentTrans3">@color/blueTrans3</item>
-    <item name="accentDark1">@color/blueDark1</item>
-    <item name="accentDark2">@color/blueDark2</item>
-    <item name="app_icon">@drawable/icon_blue</item>
-  </style>
+    <style name="ToolbarTheme.Title.Dark" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">#168E84</item>
+    </style>
 
-  <style name="AppThemeRed" parent="AppThemeGreen">
-    <item name="accent">@color/red</item>
-    <item name="accentTrans1">@color/redTrans1</item>
-    <item name="accentTrans2">@color/redTrans2</item>
-    <item name="accentTrans3">@color/redTrans3</item>
-    <item name="accentDark1">@color/redDark1</item>
-    <item name="accentDark2">@color/redDark2</item>
-    <item name="app_icon">@drawable/icon_red</item>
-  </style>
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name = "android:windowBackground">#f4f4f4</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+    </style>
 
-  <style name="AppThemeGray" parent="AppThemeGreen">
-    <item name="accent">@color/gray</item>
-    <item name="accentTrans1">@color/grayTrans1</item>
-    <item name="accentTrans2">@color/grayTrans2</item>
-    <item name="accentTrans3">@color/grayTrans3</item>
-    <item name="accentDark1">@color/grayDark1</item>
-    <item name="accentDark2">@color/grayDark2</item>
-    <item name="app_icon">@drawable/icon_gray</item>
-  </style>
+    <style name="AppTheme.NoActionBarDark">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+        <item name = "android:windowBackground">#1b1e20</item>
+        <item name="background_color">#1b1e20</item>
+        <item name="text_color">#ffff</item>
+        <item name="button_color">#ffff</item>
+        <item name="namaz_color">#168E84</item>
+        <item name="shadow_dark">#111315</item>
+        <item name="shadow_light">#25282b</item>
+        <item name="menu_color">#168E84</item>
+        <item name="actionBar">#1f2022</item>
+        <item name="bottomBarBackground">#26272b</item>
+    </style>
 
-  <!-- Common styles -->
-  <style name="AboutActivityItemContainer">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:background">?android:attr/selectableItemBackground</item>
-  </style>
+    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_menu</item>
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+        <item name="android:contentDescription">"Lala"</item>
+    </style>
 
-  <style name="AboutActivityIconImg">
-    <item name="android:layout_width">24dp</item>
-    <item name="android:layout_height">24dp</item>
-    <item name="android:layout_gravity">center</item>
-    <item name="android:layout_marginEnd">8dp</item>
-  </style>
 
-  <style name="AboutActivityItemTextBox">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:paddingTop">8dp</item>
-    <item name="android:paddingBottom">8dp</item>
-    <item name="android:orientation">vertical</item>
-  </style>
+    <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-  <style name="AboutActivityItemTitle">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:textStyle">bold</item>
-    <item name="android:textSize">16sp</item>
-  </style>
+    <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-  <style name="AboutActivityItemSummary">
-    <item name="android:layout_width">match_parent</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_marginTop">2dp</item>
-  </style>
 
-  <style name="BottomBarButton">
-    <item name="android:layout_width">0dp</item>
-    <item name="android:layout_height">wrap_content</item>
-    <item name="android:layout_weight">1</item>
-    <item name="android:padding">4dp</item>
-    <item name="android:layout_margin">8dp</item>
-    <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
-    <item name="android:maxHeight">56dp</item>
-  </style>
+
+
+    <style name="AppTheme.Teal" parent="AppTheme">
+        <item name="android:textColorPrimary">@color/teal_primary_text</item>
+        <item name="android:textColorSecondary">@color/teal_secondary_text_selector</item>
+        <item name="colorPrimary">@color/teal_primary</item>
+        <item name="colorPrimaryDark">@color/teal_primary_dark</item>
+        <item name="colorAccent">@color/teal_accent</item>
+        <item name="android:selectableItemBackground">@drawable/bg_tab_teal</item>
+        <item name="android:listChoiceIndicatorMultiple">@drawable/abc_btn_check_material</item>
+        <!-- Custom app attributes -->
+        <item name="separatorColor">@color/teal_separator</item>
+        <item name="buttonTextColor">@color/button_text_teal_light</item>
+        <item name="cardTitleBackground">@drawable/bg_card_title_teal_light</item>
+        <item name="rowWithSeparatorBackground">@drawable/bg_table_row_teal_light</item>
+        <item name="cellWithSeparatorBackground">@drawable/bg_table_cell_teal_light</item>
+    </style>
+
+
+    <style name="Base.Theme.DesignDemo" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="colorPrimary">@color/green_primary</item>
+        <item name="colorPrimaryDark">@color/green_primary_dark</item>
+        <item name="colorAccent">@color/green_accent</item>
+        <!-- Custom app attributes -->
+        <item name="separatorColor">@color/separator</item>
+        <item name="cardViewBackgroundColor">@color/cardview_light_background</item>
+        <item name="buttonTextColor">@color/button_text_light</item>
+        <item name="cardTitleBackground">@drawable/bg_card_title_light</item>
+        <item name="rowWithSeparatorBackground">@drawable/bg_table_row_light</item>
+    </style>
+
+    <style name="AppTheme.Teal.Dark" parent="Theme.AppCompat.NoActionBar">
+
+    </style>
+
+    <style name="Widget.CardContent" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">24dp</item>
+        <item name="android:paddingBottom">24dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="Widget.CardTitle" parent="android:Widget">
+        <item name="android:paddingLeft">16dp</item>
+        <item name="android:paddingRight">16dp</item>
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:orientation">horizontal</item>
+        <item name="android:background">?attr/cardTitleBackground</item>
+    </style>
+
+    <style name="Widget.CardTitle.Text" parent="android:Widget">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">?attr/colorPrimaryDark</item>
+    </style>
+
+    <style name="Widget.TimeRow" parent="android:Widget">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="Widget.TimeCol" parent="android:Widget">
+        <item name="android:paddingTop">@dimen/space_x2</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="Widget.TimeCol.Title" parent="android:Widget">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginBottom">@dimen/space</item>
+    </style>
+
+    <style name="Widget.TimeCol.Body" parent="android:Widget">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+
+    <style name="Widget.TimeRow.Separator" parent="Widget.TimeRow">
+        <item name="android:background">?attr/rowWithSeparatorBackground</item>
+    </style>
+
+    <style name="Widget.AlarmRow" parent="Widget.TimeRow">
+        <item name="android:background">?attr/cellWithSeparatorBackground</item>
+    </style>
+
+    <style name="Widget.Explain.Separator" parent="Widget.TimeRow">
+        <item name="android:textSize">12sp</item>
+        <item name="android:background">?attr/rowWithSeparatorBackground</item>
+    </style>
+
+    <style name="Widget.Button.NextPrev" parent="android:Widget">
+        <item name="android:textColor">?attr/buttonTextColor</item>
+        <item name="android:padding">@dimen/space</item>
+        <item name="android:layout_height">@dimen/space_x5</item>
+        <item name="android:layout_width">@dimen/space_x6</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/bg_button_background</item>
+        <item name="android:layout_margin">@dimen/space</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">12sp</item>
+    </style>
+
+
+
+    <style name="AppTheme.Toolbar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <!-- Customize color of navigation drawer icon and back arrow -->
+        <!--<item name="colorControlNormal">#FF0000</item>-->
+        <!-- Set title color -->
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="AppTheme.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <!-- Set proper title size -->
+        <item name="android:textSize">@dimen/abc_text_size_title_material_toolbar</item>
+        <!-- Set title color -->
+        <item name="android:textColor">@color/background_material_light</item>
+    </style>
+
+    <!-- Application theme -->
+    <style name="AppTheme.Quran" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:navigationBarColor">?android:attr/colorBackground</item>
+    </style>
+
+    <!-- Base activity theme -->
+    <!-- MaterialComponents theme adds margin at the end of overflow menu items -->
+    <style name="AppThemeGreen" parent="Theme.AppCompat.DayNight">
+
+        <!-- Define custom attributes unique to the theme -->
+        <item name="accent">@color/green</item>
+        <item name="accentTrans1">@color/greenTrans1</item>
+        <item name="accentTrans2">@color/greenTrans2</item>
+        <item name="accentTrans3">@color/greenTrans3</item>
+        <item name="accentDark1">@color/greenDark1</item>
+        <item name="accentDark2">@color/greenDark2</item>
+        <item name="app_icon">@drawable/icon_green</item>
+
+        <!-- Preference Group Titles, Dialog Button Text -->
+        <item name="colorAccent">?attr/accent</item>
+
+        <!-- Check Boxes, Radio Buttons, Switch Active State, Indeterminate Progress Bar.
+          If not set, uses colorAccent -->
+        <!--<item name="colorControlActivated">?attr/accent</item>-->
+
+        <!-- Status Bar -->
+        <item name="colorPrimaryDark">?attr/accentDark2</item>
+
+        <!-- Action Bar, CircularProgressIndicator, Page Tabs indicator -->
+        <item name="colorPrimary">?attr/accentDark1</item>
+
+        <!-- Custom Styles -->
+        <item name="android:spinnerItemStyle">@style/SpinnerItemStyle</item>
+        <item name="alertDialogTheme">@style/AlertDialogTheme</item>
+
+        <!-- Do not resize layout when switching between
+          SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN and SYSTEM_UI_FLAG_FULLSCREEN -->
+        <item name="android:windowLayoutInDisplayCutoutMode" tools:targetApi="o_mr1">never</item>
+    </style>
+
+    <style name="SpinnerItemStyle">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/spinner_color</item>
+    </style>
+
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.DayNight.Dialog.Alert">
+        <item name="windowFixedWidthMajor">65%</item>
+        <item name="windowFixedWidthMinor">95%</item>
+
+        <!-- Dialog Button Text. Required when using MaterialComponents theme for Application or Activity-->
+        <!--<item name="buttonBarButtonStyle">@style/ButtonBarStyle</item>-->
+
+        <!-- RadioButton color in ChoiceItem list -->
+        <item name="colorAccent">?attr/accent</item>
+
+        <!-- CircularProgressIndicator color -->
+        <item name="colorPrimary">?attr/accentDark1</item>
+
+        <item name="colorPrimaryDark">?attr/accentDark2</item>
+    </style>
+
+    <style name="ButtonBarStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textColor">@color/button_text</item>
+    </style>
+
+    <!-- Override custom attributes unique to the themes -->
+    <style name="AppThemeBlue" parent="AppThemeGreen">
+        <item name="accent">@color/blue</item>
+        <item name="accentTrans1">@color/blueTrans1</item>
+        <item name="accentTrans2">@color/blueTrans2</item>
+        <item name="accentTrans3">@color/blueTrans3</item>
+        <item name="accentDark1">@color/blueDark1</item>
+        <item name="accentDark2">@color/blueDark2</item>
+        <item name="app_icon">@drawable/icon_blue</item>
+    </style>
+
+    <style name="AppThemeRed" parent="AppThemeGreen">
+        <item name="accent">@color/red</item>
+        <item name="accentTrans1">@color/redTrans1</item>
+        <item name="accentTrans2">@color/redTrans2</item>
+        <item name="accentTrans3">@color/redTrans3</item>
+        <item name="accentDark1">@color/redDark1</item>
+        <item name="accentDark2">@color/redDark2</item>
+        <item name="app_icon">@drawable/icon_red</item>
+    </style>
+
+    <style name="AppThemeGray" parent="AppThemeGreen">
+        <item name="accent">@color/gray</item>
+        <item name="accentTrans1">@color/grayTrans1</item>
+        <item name="accentTrans2">@color/grayTrans2</item>
+        <item name="accentTrans3">@color/grayTrans3</item>
+        <item name="accentDark1">@color/grayDark1</item>
+        <item name="accentDark2">@color/grayDark2</item>
+        <item name="app_icon">@drawable/icon_gray</item>
+    </style>
+
+    <!-- Common styles -->
+    <style name="AboutActivityItemContainer">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="AboutActivityIconImg">
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginEnd">8dp</item>
+    </style>
+
+    <style name="AboutActivityItemTextBox">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:paddingTop">8dp</item>
+        <item name="android:paddingBottom">8dp</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="AboutActivityItemTitle">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="AboutActivityItemSummary">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">2dp</item>
+    </style>
+
+    <style name="BottomBarButton">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:padding">4dp</item>
+        <item name="android:layout_margin">8dp</item>
+        <item name="android:background">?android:attr/selectableItemBackgroundBorderless</item>
+        <item name="android:maxHeight">56dp</item>
+    </style>
+
 
 </resources>

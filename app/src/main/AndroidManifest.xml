@@ -1,99 +1,304 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  package="com.mirfatif.noorulhuda">
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.mirfatif.noorulhuda">
 
-  <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
-  <uses-permission android:name="android.permission.WAKE_LOCK" />
-  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
-  <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- <uses-permission android:name="android.permission.MANAGE_EXTERNAL_STORAGE" /> -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" /> <!-- Permission to start Alarm on device reboot -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SCHEDULE_EXACT_ALARM"/>
+<!--    <uses-permission android:name="com.android.alarm.permission.SET_ALARM"/>-->
 
-  <application
-    android:allowBackup="true"
-    android:icon="@mipmap/ic_launcher"
-    android:label="@string/app_name"
-    android:name=".App"
-    android:roundIcon="@mipmap/ic_launcher_round"
-    android:supportsRtl="true"
-    android:theme="@style/AppTheme"
-    tools:ignore="AllowBackup">
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
 
-    <activity android:name=".quran.MainActivity">
-      <intent-filter>
-        <action android:name="android.intent.action.MAIN" />
-        <category android:name="android.intent.category.LAUNCHER" />
-      </intent-filter>
-      <meta-data
-        android:name="android.app.shortcuts"
-        android:resource="@xml/shortcuts" />
-    </activity>
+    <queries>
+        <intent>
+            <action android:name="android.support.customtabs.action.CustomTabsService" />
+        </intent>
+    </queries>
 
-    <activity
-      android:name=".dua.DuaActivity"
-      android:parentActivityName=".quran.MainActivity" />
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true"
+        tools:ignore="AllowBackup">
+        <activity
+            android:name="com.districthut.islam.views.NamesActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.ActionBar"/>
 
-    <activity
-      android:name=".prayer.PrayerTimeActivity"
-      android:parentActivityName=".quran.MainActivity">
-      <intent-filter>
-        <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
-      </intent-filter>
-    </activity>
+        <activity
+            android:name="com.mianasad.myislam.views.HomeActivity"
+            android:exported="false" />
 
-    <activity
-      android:name=".ui.AboutActivity"
-      android:parentActivityName=".quran.MainActivity" />
+        <activity
+            android:name="com.districthut.islam.Activities.calendar.RemindersActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.districthut.islam.Activities.SettingsActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.ActionBar"
+            android:label="@string/title_activity_settings" />
+        <activity
+            android:name="com.districthut.islam.utils.beadscounter.BeadsActivity"
+            android:exported="false"
+            android:label="Tasbeeh" />
+        <activity
+            android:name="com.thefinestartist.finestwebview.FinestWebViewActivity"
+            android:configChanges="keyboardHidden|orientation|screenSize"
+            android:screenOrientation="sensor"
+            android:theme="@style/FinestWebViewTheme.Light" />
+        <activity
+            android:name="com.districthut.islam.Activities.WebActivity"
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.districthut.islam.Activities.calendar.CalendarActivity"
+            android:exported="true"
+            android:label="Calendar"
+            android:theme="@style/AppTheme.ActionBar" />
+        <activity android:name=".quran.MainActivity">
 
-    <service
-      android:exported="false"
-      android:name=".svc.NotifDismissSvc" />
+            <!-- <intent-filter> -->
+            <!-- <action android:name="android.intent.action.MAIN" /> -->
+            <!-- <category android:name="android.intent.category.LAUNCHER" /> -->
+            <!-- </intent-filter> -->
+            <meta-data
+                android:name="android.app.shortcuts"
+                android:resource="@xml/shortcuts" />
+        </activity>
+        <activity
+            android:name=".dua.DuaActivity"
+            android:parentActivityName=".quran.MainActivity" />
+        <activity
+            android:name=".prayer.PrayerTimeActivity"
+            android:parentActivityName=".quran.MainActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.AboutActivity"
+            android:parentActivityName=".quran.MainActivity" />
 
-    <service
-      android:exported="false"
-      android:name=".svc.PrayerNotifySvc" />
+        <service
+            android:name=".svc.NotifDismissSvc"
+            android:exported="false" />
+        <service
+            android:name=".svc.PrayerNotifySvc"
+            android:exported="false" />
+        <service
+            android:name=".svc.PrayerAdhanSvc"
+            android:exported="false" />
+        <service
+            android:name=".svc.LogcatService"
+            android:exported="false" />
 
-    <service
-      android:exported="false"
-      android:name=".svc.PrayerAdhanSvc" />
+        <receiver
+            android:name=".BootReceiver"
+            android:enabled="false"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <receiver android:name=".prayer.WidgetProvider"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
 
-    <service
-      android:exported="false"
-      android:name=".svc.LogcatService" />
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_info" />
+        </receiver>
 
-    <receiver
-      android:enabled="false"
-      android:name=".BootReceiver">
-      <intent-filter>
-        <action android:name="android.intent.action.BOOT_COMPLETED" />
-      </intent-filter>
-    </receiver>
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.mianasad.myislam.FileProvider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider> <!-- //////////////// -->
 
-    <receiver android:name=".prayer.WidgetProvider">
-      <intent-filter>
-        <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
-      </intent-filter>
+        <activity
+            android:name="com.districthut.islam.Activities.search.SearchDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.districthut.islam.Activities.LiveMakkahActivity"
+            android:exported="false"
+            android:label="Live Makkah"
+            android:screenOrientation="landscape" />
+        <activity
+            android:name="com.districthut.islam.Activities.Hajj.HajjDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name="com.districthut.islam.Activities.HadithsDetailActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.districthut.islam.Activities.HadithsTypeActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.districthut.islam.Activities.HadithsActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.districthut.islam.Activities.HalalPlacesActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.districthut.islam.Activities.HajjUmmrahActivity"
+            android:exported="true"
+            android:label="Hajj &amp; Umrah Guides" />
+        <activity
+            android:name="com.districthut.islam.Activities.BackgroundActivity"
+            android:exported="true" />
+        <activity
+            android:name="com.districthut.islam.Activities.StoriesDetailActivity"
+            android:exported="false"
+            android:label="Prophet Stories" />
+        <activity
+            android:name="com.districthut.islam.Activities.StoriesActivity"
+            android:exported="true"
+            android:label="Prophet Stories" />
+        <activity
+            android:name="com.districthut.islam.prayer.PrayersActivity"
+            android:exported="false" />
+        <activity android:name="com.districthut.islam.Activities.MuhammadNamesActivity" />
+        <activity
+            android:name="com.districthut.islam.Activities.ShahadaActivity"
+            android:label="Shahadat"
+            android:theme="@style/AppTheme.ActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.districthut.islam.Activities.LangSettingsActivity"
+            android:label="Settings"
+            android:screenOrientation="portrait" />
 
-      <meta-data
-        android:name="android.appwidget.provider"
-        android:resource="@xml/widget_info" />
-    </receiver>
 
-    <provider
-      android:authorities="com.mirfatif.noorulhuda.FileProvider"
-      android:exported="false"
-      android:grantUriPermissions="true"
-      android:name="androidx.core.content.FileProvider">
-      <meta-data
-        android:name="android.support.FILE_PROVIDER_PATHS"
-        android:resource="@xml/file_paths" />
-    </provider>
+        <meta-data
+            android:name="android.app.searchable"
+            android:resource="@xml/searchable" />
 
-  </application>
 
-  <queries>
-    <intent>
-      <action android:name="android.support.customtabs.action.CustomTabsService" />
-    </intent>
-  </queries>
+        <activity
+            android:name="com.districthut.islam.Activities.BookmarkActivity"
+            android:label="Bookmarks"
+            android:theme="@style/AppTheme.ActionBar"/>
+        <activity
+            android:name="com.districthut.islam.Activities.TasbeehActivity"
+            android:label="Tasbeeh"
+            android:theme="@style/AppTheme.ActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.districthut.islam.Activities.PrayersActivity"
+            android:label="Prayers"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.districthut.islam.Activities.qibla.QiblaActivity"
+            android:label="Qibla"
+            android:theme="@style/AppTheme.ActionBar"
+            android:screenOrientation="portrait" />
+        <activity android:name="com.districthut.islam.Activities.AllahNamesActivity" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <activity
+            android:name="com.districthut.islam.Activities.HomeActivity"
+            android:exported="true"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name="com.districthut.islam.Activities.MyPreferencesActivity"
+            android:theme="@style/AppTheme" />
+        <activity android:name="com.districthut.islam.Activities.About" />
+        <activity
+            android:name="com.districthut.islam.views.SplashActivity"
+            android:exported="true"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.districthut.islam.Activities.KalimaActivity"
+            android:label="6 Kalimas"
+            android:theme="@style/AppTheme.ActionBar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.districthut.islam.naat.NaatsActivity"
+            android:label="Naats"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.districthut.islam.naat.PlayNaatActivity"
+            android:label="Play Naat"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name="com.districthut.islam.Activities.DuaActivity"
+            android:label="Categories"
+            android:theme="@style/AppTheme.ActionBar"
+            android:screenOrientation="portrait" />
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+
+        <activity
+            android:name="com.districthut.islam.prayer.SetAlarmActivity"
+            android:label="@string/set_alarm"
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.districthut.islam.prayer.OnboardingActivity"
+            android:label=""
+            android:screenOrientation="user" />
+        <activity
+            android:name="com.districthut.islam.prayer.RingAlarmActivity"
+            android:excludeFromRecents="true"
+            android:launchMode="singleTask"
+            android:screenOrientation="user"
+            android:theme="@style/AppTheme.Teal.Dark" />
+
+
+        <receiver android:name="com.districthut.islam.prayer.scheduler.SalaatAlarmReceiver" /> <!-- <receiver android:name="com.districthut.islam.prayer.scheduler.RamadanAlarmReceiver" /> -->
+        <receiver
+            android:name="com.districthut.islam.prayer.scheduler.SalaatBootReceiver"
+            android:enabled="false"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.TIMEZONE_CHANGED" />
+                <action android:name="android.intent.action.TIME_SET" />
+                <action android:name="android.intent.action.MY_PACKAGE_REPLACED" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.districthut.islam.Activities.calendar.CalendarAlarmReceiver"
+            android:exported="false"/>
+
+        <service android:name="com.districthut.islam.prayer.scheduler.SalaatSchedulingService" />
+
+        <meta-data android:name="applovin.sdk.key"
+            android:value="359TgdH0f4NbHu75lERXhmO8-g7emxfyP-8i59oXkFloW_1OAK3D1bRKt739_Fhc7n0XteZrt0_K3AGN6iWi-2"/>
+    </application>
 
 </manifest>

@@ -19,6 +19,7 @@ import static java.util.concurrent.TimeUnit.SECONDS;
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
@@ -26,6 +27,7 @@ import android.os.Build.VERSION;
 import android.os.Build.VERSION_CODES;
 import android.os.Bundle;
 import android.os.SystemClock;
+import android.preference.PreferenceManager;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.Gravity;
@@ -47,6 +49,7 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.appcompat.view.menu.MenuBuilder;
 import androidx.appcompat.widget.PopupMenu;
 import androidx.appcompat.widget.SearchView.OnQueryTextListener;
@@ -60,6 +63,7 @@ import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback;
 import com.mirfatif.noorulhuda.App;
 import com.mirfatif.noorulhuda.R;
 import com.mirfatif.noorulhuda.databinding.ActivityMainBinding;
+import com.mirfatif.noorulhuda.databinding.ActivityMainsBinding;
 import com.mirfatif.noorulhuda.databinding.GotoPickerBinding;
 import com.mirfatif.noorulhuda.databinding.SearchHelpBinding;
 import com.mirfatif.noorulhuda.databinding.SliderBinding;
@@ -103,7 +107,7 @@ public class MainActivity extends BaseActivity {
 
   private static final String TAG = "MainActivity";
 
-  private ActivityMainBinding mB;
+  private ActivityMainsBinding mB;
   private BackupRestore mBackupRestore;
 
   private QuranPageAdapter mQuranPageAdapter;
@@ -112,10 +116,19 @@ public class MainActivity extends BaseActivity {
   protected synchronized void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     // Activity is recreated on switching to Dark Theme, so return here
-    if (setNightTheme(this)) {
-      return;
+//    if (setNightTheme(this)) {
+//      return;
+//    }
+    SharedPreferences defaultPreferences = PreferenceManager.getDefaultSharedPreferences(this);
+    boolean isDarkMode =  defaultPreferences.getBoolean("dark_mode",false);
+    if (isDarkMode) {
+      AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+      setTheme(R.style.AppTheme_NoActionBarDark);
+    } else {
+      AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+      setTheme(R.style.AppTheme_NoActionBar);
     }
-    mB = ActivityMainBinding.inflate(getLayoutInflater());
+    mB = ActivityMainsBinding.inflate(getLayoutInflater());
     setBgColor();
     setContentView(mB.getRoot());
 
@@ -162,6 +175,16 @@ public class MainActivity extends BaseActivity {
       } else {
         refreshUi(RestorePosType.SAVED);
       }
+
+
+//      refreshUi(RestorePosType.NONE);
+//
+//
+//      Utils.runBg(() -> {
+//        QuranDao db = SETTINGS.getQuranDb();
+//        goTo(db.getSurahStartEntity(5));
+//      });
+
     } else {
       buildDbAndRefreshUi();
     }
@@ -254,7 +277,7 @@ public class MainActivity extends BaseActivity {
 
   private void buildDbAndRefreshUi() {
     AlertDialogFragment dialog = showDbBuildDialog();
-    Utils.showThirdPartyCredits(this, false);
+    //Utils.showThirdPartyCredits(this, false);
     Utils.runBg(
         () -> {
           if (DbBuilder.buildDb(DbBuilder.MAIN_DB)) {
@@ -331,6 +354,20 @@ public class MainActivity extends BaseActivity {
     }
 
     mQuranPageAdapter.refresh();
+
+    Utils.runBg(
+            () -> {
+              AayahEntity aayah = SETTINGS.getQuranDb().getAayahEntity(getIntent().getIntExtra("SURAH_NUM",1), 0);
+              // Wait for QuranPageAdapter to come up;
+              for (int i = 0; i < 50; i++) {
+                if (getPageFrag(null) != null) {
+                  goTo(aayah);
+                  break;
+                }
+                SystemClock.sleep(100);
+              }
+            });
+
 
     if (SETTINGS.isSlideModeAndNotInSearch()) {
       if (restorePosType == RestorePosType.SAVED) {
@@ -1677,7 +1714,7 @@ public class MainActivity extends BaseActivity {
   ////////////////////////// FOR SUBCLASSES ////////////////////////
   //////////////////////////////////////////////////////////////////
 
-  public ActivityMainBinding getRootView() {
+  public ActivityMainsBinding getRootView() {
     return mB;
   }
 }

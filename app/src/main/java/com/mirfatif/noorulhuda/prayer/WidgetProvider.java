@@ -263,7 +263,7 @@ public class WidgetProvider extends AppWidgetProvider {
     if (cancel) {
       flag = PendingIntent.FLAG_NO_CREATE;
     }
-    return flag;
+    return flag | PendingIntent.FLAG_IMMUTABLE;
   }
 
   private final WakeLock mWakeLock;

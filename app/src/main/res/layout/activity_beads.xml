@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.districthut.islam.utils.beadscounter.BeadsActivity">
+
+    <com.districthut.islam.utils.beadscounter.views.counter.CounterView
+        android:id="@+id/counterView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clickable="true"
+        android:focusable="true"
+        app:beadsColor="@color/bead_color"
+        app:threadColor="?attr/text_color"
+        app:threadThickness="1dp" />
+
+    <TextView
+        android:id="@+id/doneBeadsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/top_image_height"
+        android:text="0"
+        android:textColor="?attr/text_color"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display3"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/counterView"
+        app:layout_constraintEnd_toStartOf="@+id/totalBeadsTv"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/counterView" />
+
+    <TextView
+        android:id="@+id/totalBeadsTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+        app:layout_constraintBaseline_toBaselineOf="@id/doneBeadsTv"
+        app:layout_constraintEnd_toStartOf="@+id/editIcon"
+        app:layout_constraintStart_toEndOf="@+id/doneBeadsTv"
+        tools:text="/33"
+        android:textColor="?attr/text_color"/>
+
+    <TextView
+        android:id="@+id/loopCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Loop 1"
+        android:textColor="?attr/text_color"
+        app:layout_constraintEnd_toEndOf="@+id/editIcon"
+        app:layout_constraintStart_toStartOf="@+id/doneBeadsTv"
+        app:layout_constraintTop_toBottomOf="@+id/doneBeadsTv" />
+
+    <ImageView
+        android:id="@+id/editIcon"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="6dp"
+        android:clickable="true"
+        android:contentDescription="@string/edit_icon_description"
+        android:focusable="true"
+        android:src="@drawable/ic_edit_icon"
+        app:layout_constraintBottom_toBottomOf="@id/totalBeadsTv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/totalBeadsTv"
+        app:tint="@color/bead_color" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

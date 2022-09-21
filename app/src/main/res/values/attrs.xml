@@ -1,12 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <!--Theme unique attributes-->
-  <attr format="color" name="accent" />
-  <attr format="color" name="accentTrans1" />
-  <attr format="color" name="accentTrans2" />
-  <attr format="color" name="accentTrans3" />
-  <attr format="color" name="accentDark1" />
-  <attr format="color" name="accentDark2" />
+    <dimen name="banner_height">50dp</dimen>
 
-  <attr format="reference" name="app_icon" />
+    <declare-styleable name="CounterView">
+        <attr name="beadsColor" format="color" />
+        <attr name="threadColor" format="color" />
+        <attr name="threadThickness" format="dimension" />
+    </declare-styleable>
+
+    <declare-styleable name="ds">
+        <attr name="background_color" format="color"/>
+        <attr name="text_color" format="color"/>
+        <attr name="button_color" format="color"/>
+        <attr name="namaz_color" format="color"/>
+        <attr name="shadow_light" format="color"/>
+        <attr name="shadow_dark" format="color"/>
+        <attr name="menu_color" format="color"/>
+        <attr name="bottomBarBackground" format="color"/>
+        <attr name="actionBar" format="color"/>
+    </declare-styleable>
+
+    <attr name="separatorColor" format="color" />
+    <attr name="cardViewBackgroundColor" format="color" />
+    <attr name="buttonTextColor" format="color" />
+    <attr name="cardTitleBackground" format="reference" />
+    <attr name="rowWithSeparatorBackground" format="reference" />
+    <attr name="cellWithSeparatorBackground" format="reference" />
+
+    <declare-styleable name="CellImageView">
+        <attr name="meow_imageview_useColor" format="boolean" />
+        <attr name="meow_imageview_isBitmap" format="boolean" />
+        <attr name="meow_imageview_resource" format="reference" />
+        <attr name="meow_imageview_color" format="color" />
+        <attr name="meow_imageview_size" format="dimension" />
+        <attr name="meow_imageview_isAction" format="boolean" />
+        <attr name="meow_imageview_actionBackgroundAlpha" format="boolean" />
+        <attr name="meow_imageview_changeSize" format="boolean" />
+        <attr name="meow_imageview_fitImage" format="boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="KBottomNavigation">
+        <attr name="mbn_defaultIconColor" format="color" />
+        <attr name="mbn_selectedIconColor" format="color" />
+        <attr name="mbn_backgroundBottomColor" format="color" />
+        <attr name="mbn_countTextColor" format="color" />
+        <attr name="mbn_countBackgroundColor" format="color" />
+        <attr name="mbn_countTypeface" format="string" />
+        <attr name="mbn_rippleColor" format="color" />
+        <attr name="mbn_shadowColor" format="color" />
+    </declare-styleable>
+
+    <attr format="color" name="accent" />
+    <attr format="color" name="accentTrans1" />
+    <attr format="color" name="accentTrans2" />
+    <attr format="color" name="accentTrans3" />
+    <attr format="color" name="accentDark1" />
+    <attr format="color" name="accentDark2" />
+
+    <attr format="reference" name="app_icon" />
 </resources>

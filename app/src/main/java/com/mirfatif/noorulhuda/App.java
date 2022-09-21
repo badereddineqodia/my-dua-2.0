@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.util.Log;
+
+import com.districthut.islam.utils.AppManager;
 import com.mirfatif.noorulhuda.prayer.WidgetProvider;
 import com.mirfatif.noorulhuda.svc.LogcatService;
 import com.mirfatif.noorulhuda.util.Utils;
@@ -44,7 +46,13 @@ public class App extends Application {
         });
 
     SETTINGS.rebuildDb();
+
+      AppManager.init(this);
+
+
   }
+
+
 
   public static Context getCxt() {
     return mAppContext;

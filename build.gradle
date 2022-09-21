@@ -1,10 +1,19 @@
 buildscript {
     repositories {
         google()
+        jcenter()
+        maven { url 'https://plugins.gradle.org/m2/'}
+//
         mavenCentral()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:7.0.1'
+//        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.11.0, 0.99.99]'
+        classpath 'com.google.firebase:firebase-crashlytics-gradle:2.8.1'
+
+
+
+        classpath 'org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.21'
 
         // From Time4A/build.gradle
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.8.0'
@@ -12,14 +21,17 @@ buildscript {
     }
 }
 
-plugins {
-    id 'com.github.sherter.google-java-format' version '0.9'
-}
+//plugins {
+//    id 'com.github.sherter.google-java-format' version '0.9'
+//}
 
 allprojects {
     repositories {
         google()
         mavenCentral()
+        jcenter()
+        maven { url "https://jitpack.io" }
+        maven { url 'https://maven.google.com' }
     }
 
     tasks.withType(JavaCompile) {
@@ -27,10 +39,10 @@ allprojects {
     }
 
     project.ext {
-        compileSdkVer = 30
-        buildToolsVer = "30.0.3"
+        compileSdkVer = 31
+        buildToolsVer = "31.0.0"
         minSdkVer = 24
-        targetSdkVer = 30
+        targetSdkVer = 31
         ndkVer = "22.1.7171670"
     }
 }

@@ -131,9 +131,9 @@ public class PrayerTimeActivity extends BaseActivity {
       }
     }
 
-    if (setNightTheme(this)) {
-      return;
-    }
+//    if (setNightTheme(this)) {
+//      return;
+//    }
 
     mB = ActivityPrayerTimeBinding.inflate(getLayoutInflater());
     setContentView(mB.getRoot());
@@ -187,28 +187,28 @@ public class PrayerTimeActivity extends BaseActivity {
     }
   }
 
-  @Override
-  public boolean onCreateOptionsMenu(Menu menu) {
-    getMenuInflater().inflate(R.menu.prayer, menu);
-    MenuCompat.setGroupDividerEnabled(menu, true);
-    return true;
-  }
-
-  @Override
-  public boolean onPrepareOptionsMenu(Menu menu) {
-    boolean enable = mCompass.getAccelerometer() != null && mCompass.getMagnetometer() != null;
-    menu.findItem(R.id.action_qibla_dir).setEnabled(enable && SETTINGS.getLngLat() != null);
-    return true;
-  }
-
-  @Override
-  public boolean onOptionsItemSelected(MenuItem item) {
-    if (item.getItemId() == R.id.action_qibla_dir) {
-      mCompass.show();
-      return true;
-    }
-    return super.onOptionsItemSelected(item);
-  }
+//  @Override
+//  public boolean onCreateOptionsMenu(Menu menu) {
+//    getMenuInflater().inflate(R.menu.prayer, menu);
+//    MenuCompat.setGroupDividerEnabled(menu, true);
+//    return true;
+//  }
+//
+//  @Override
+//  public boolean onPrepareOptionsMenu(Menu menu) {
+//    boolean enable = mCompass.getAccelerometer() != null && mCompass.getMagnetometer() != null;
+//    menu.findItem(R.id.action_qibla_dir).setEnabled(enable && SETTINGS.getLngLat() != null);
+//    return true;
+//  }
+//
+//  @Override
+//  public boolean onOptionsItemSelected(MenuItem item) {
+//    if (item.getItemId() == R.id.action_qibla_dir) {
+//      mCompass.show();
+//      return true;
+//    }
+//    return super.onOptionsItemSelected(item);
+//  }
 
   private static final String CLASS = MainActivity.class.getName();
   private static final String TAG_BATTERY_OPT = CLASS + ".BATTERY_OPT";

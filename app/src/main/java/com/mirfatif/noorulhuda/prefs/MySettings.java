@@ -1,6 +1,7 @@
 package com.mirfatif.noorulhuda.prefs;
 
 import static android.view.WindowManager.LayoutParams.BRIGHTNESS_OVERRIDE_NONE;
+import static com.mirfatif.noorulhuda.prayer.PrayerData.METHOD_LOCATIONS;
 import static com.mirfatif.noorulhuda.util.Utils.getString;
 
 import android.annotation.SuppressLint;
@@ -8,6 +9,8 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.content.res.TypedArray;
 import android.graphics.Typeface;
+import android.location.Location;
+
 import androidx.annotation.ArrayRes;
 import androidx.annotation.ColorRes;
 import androidx.core.content.res.ResourcesCompat;
@@ -37,11 +40,63 @@ import java.util.concurrent.TimeUnit;
 
 public enum MySettings {
   SETTINGS;
-
+  public final int[] NAMES =
+          new int[] {
+                  R.string.fajr,
+                  R.string.sunrise,
+                  R.string.dhuhr,
+                  R.string.asr,
+                  R.string.maghrib,
+                  R.string.isha
+          };
   private static final String TAG = "MySettings";
 
   private final SharedPreferences mPrefs, mNoBkpPrefs;
+  public void saveLocation(String city, String tzId, float... lngLat) {
+    if (lngLat.length != 2) {
+      SETTINGS.removeLngLat();
+    } else {
+      SETTINGS.saveLngLat(lngLat[0], lngLat[1]);
+    }
+    SETTINGS.setLocTimeZoneId(tzId);
 
+
+    SETTINGS.setCityName(city);
+    setNearestMethod();
+
+  }
+
+  public void setNearestMethod() {
+    Coordinates location = SETTINGS.getLngLat();
+    if (location == null) {
+      return;
+    }
+    Location loc1 = new Location("");
+    loc1.setLatitude(location.latitude);
+    loc1.setLongitude(location.longitude);
+    Location loc2 = new Location("");
+    float minDist = Float.MAX_VALUE;
+    int order = -1;
+
+    for (int i = 0; i < METHOD_LOCATIONS.length; i++) {
+      Coordinates lngLat = METHOD_LOCATIONS[i];
+      if (lngLat.latitude == 0 && lngLat.longitude == 0) {
+        continue;
+      }
+      loc2.setLatitude(lngLat.latitude);
+      loc2.setLongitude(lngLat.longitude);
+      float dist = loc1.distanceTo(loc2);
+      if (dist < minDist) {
+        minDist = dist;
+        order = i;
+      }
+    }
+    if (order >= 0) {
+      SETTINGS.setCalcMethod(order);
+      int finalOrder = order;
+
+    }
+  }
   MySettings() {
     mPrefs = Utils.getDefPrefs();
     mNoBkpPrefs = Utils.getNoBkpPrefs();

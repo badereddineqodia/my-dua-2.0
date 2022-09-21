@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soup.neumorphism.NeumorphCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    app:neumorph_inset="12dp"
+    app:neumorph_insetBottom="12dp"
+    app:neumorph_insetEnd="12dp"
+    app:neumorph_insetStart="12dp"
+    app:neumorph_insetTop="12dp"
+    app:neumorph_lightSource="leftTop"
+    app:neumorph_shadowColorDark="?attr/shadow_dark"
+    app:neumorph_shadowColorLight="?attr/shadow_light"
+    app:neumorph_shadowElevation="2dp"
+    app:neumorph_shapeType="flat"
+    app:neumorph_backgroundColor="#f4f4f4">
+
+</soup.neumorphism.NeumorphCardView>

@@ -700,6 +700,6 @@ public class Utils {
   }
 
   public static int getPiFlags() {
-    return PendingIntent.FLAG_UPDATE_CURRENT;
+    return PendingIntent.FLAG_UPDATE_CURRENT |  PendingIntent.FLAG_IMMUTABLE;
   }
 }

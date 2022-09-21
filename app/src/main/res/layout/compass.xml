@@ -1,48 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.mirfatif.noorulhuda.ui.base.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
   xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
+  android:layout_width="wrap_content"
   android:layout_height="wrap_content"
-  android:paddingTop="12dp"
-  android:paddingBottom="16dp"
-  android:paddingStart="24dp"
-  android:paddingEnd="24dp"
-  android:gravity="center"
-  android:orientation="vertical">
+  android:orientation="vertical"
+    android:gravity="center">
 
-  <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
+  <RelativeLayout
     android:id="@+id/arrow_qibla"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:padding="24dp"
     android:gravity="center"
-    android:orientation="vertical">
+    android:orientation="vertical"
+      android:layout_centerHorizontal="true"
+      android:layout_centerVertical="true">
+
 
     <ImageView
-      android:id="@+id/qibla"
-      android:layout_width="40dp"
-      android:layout_height="40dp"
-      android:layout_marginBottom="8dp"
-      android:padding="4dp"
-      android:src="@drawable/qibla"
-      tools:ignore="ContentDescription" />
+        android:id="@+id/compass"
+        android:layout_width="@dimen/_60mdp"
+        android:layout_height="@dimen/_60mdp"
+        android:layout_centerInParent="true"
+        android:src="@drawable/ic_compass" />
 
     <ImageView
-      android:layout_width="96dp"
-      android:layout_height="64dp"
-      android:padding="4dp"
-      android:rotation="-90"
-      android:scaleType="fitXY"
-      android:src="@drawable/arrow"
-      tools:ignore="ContentDescription" />
+        android:id="@+id/qibla"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_qibla"
+        tools:ignore="ContentDescription" />
+<!--    <ImageView-->
+<!--      android:layout_width="96dp"-->
+<!--      android:layout_height="64dp"-->
+<!--      android:padding="4dp"-->
+<!--      android:rotation="-90"-->
+<!--      android:scaleType="fitXY"-->
+<!--      android:src="@drawable/arrow"-->
+<!--      tools:ignore="ContentDescription" />-->
 
-  </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
+  </RelativeLayout>
   <TextView
     android:id="@+id/angle_v"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:textColor="@color/fgSharp2"
-    android:textSize="16sp" />
+    android:textSize="16sp"
+      android:visibility="gone"/>
 
 </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>

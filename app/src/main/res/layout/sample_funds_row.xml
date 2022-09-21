@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_10mdp"
+        app:cardCornerRadius="@dimen/_5mdp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_150mdp"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/backgroundimg6" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/_80mdp"
+                android:layout_gravity="bottom"
+                android:background="@drawable/black_transparent"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="bottom"
+                android:layout_marginLeft="@dimen/_12mdp"
+                android:layout_marginRight="@dimen/_12mdp"
+                android:layout_marginBottom="@dimen/_5mdp">
+                <TextView
+                    android:id="@+id/title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_black"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="Help enrol orphans and children into school"
+                    android:paddingTop="@dimen/_12mdp"
+                    android:textSize="@dimen/_12font_mdp"
+                    />
+                <TextView
+                    android:id="@+id/location"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:fontFamily="@font/roboto_medium"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:text="London, UK"
+                    android:layout_marginBottom="@dimen/_5mdp"
+                    android:textSize="@dimen/_10font_mdp"
+                    />
+            </LinearLayout>
+
+
+        </FrameLayout>
+    </androidx.cardview.widget.CardView>
+</androidx.constraintlayout.widget.ConstraintLayout>

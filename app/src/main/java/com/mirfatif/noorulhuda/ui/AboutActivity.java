@@ -22,6 +22,7 @@ import com.google.android.material.snackbar.Snackbar;
 import com.mirfatif.noorulhuda.BuildConfig;
 import com.mirfatif.noorulhuda.R;
 import com.mirfatif.noorulhuda.databinding.ActivityAboutBinding;
+import com.mirfatif.noorulhuda.databinding.ActivityAboutsBinding;
 import com.mirfatif.noorulhuda.databinding.TranslationDialogBinding;
 import com.mirfatif.noorulhuda.prefs.AppUpdate;
 import com.mirfatif.noorulhuda.prefs.AppUpdate.UpdateInfo;
@@ -35,13 +36,13 @@ import me.saket.bettermovementmethod.BetterLinkMovementMethod.OnLinkClickListene
 
 public class AboutActivity extends BaseActivity {
 
-  private ActivityAboutBinding mB;
+  private ActivityAboutsBinding mB;
   private ActivityResultLauncher<String> mLoggingLauncher;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
-    mB = ActivityAboutBinding.inflate(getLayoutInflater());
+    mB = ActivityAboutsBinding.inflate(getLayoutInflater());
     setContentView(mB.getRoot());
 
     if (setNightTheme(this)) {

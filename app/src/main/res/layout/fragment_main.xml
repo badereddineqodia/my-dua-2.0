@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:ads="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    >
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/nestedScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:fillViewport="true"
+        android:visibility="visible"
+        ads:layout_constraintBottom_toBottomOf="parent"
+        ads:layout_constraintEnd_toEndOf="parent"
+        ads:layout_constraintStart_toStartOf="parent"
+        ads:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:background="@color/white"
+                android:orientation="vertical"
+                ads:layout_constraintBottom_toBottomOf="@+id/cardView"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toTopOf="parent"></LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:orientation="vertical"
+                ads:layout_constraintEnd_toEndOf="@+id/cardView"
+                ads:layout_constraintStart_toStartOf="@+id/cardView"
+                ads:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                <include
+                    android:id="@+id/feelingFeature"
+                    layout="@layout/feeling_feature_layout"
+                    android:visibility="visible" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/adCard"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:visibility="gone"
+                    ads:cardCornerRadius="10dp">
+
+                    <LinearLayout
+                        android:id="@+id/adLayout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:gravity="center"
+                        android:orientation="vertical"
+                        android:padding="10dp"></LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+            </LinearLayout>
+
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:id="@+id/imageView11"
+                android:layout_width="0dp"
+                android:layout_height="@dimen/_150mdp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/fajar_bg"
+                android:visibility="visible"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintHorizontal_bias="1.0"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toTopOf="parent"
+                ads:riv_corner_radius="10dp" />
+
+            <TextView
+                android:id="@+id/currentDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginLeft="16dp"
+                android:layout_marginTop="8dp"
+                android:text="Current Date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_12font_mdp"
+                android:textStyle="bold"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/islamicDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Islamic Date"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_10font_mdp"
+                ads:layout_constraintStart_toStartOf="@+id/currentDate"
+                ads:layout_constraintTop_toBottomOf="@+id/currentDate" />
+
+            <TextView
+                android:id="@+id/prayerName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="-1"
+                android:shadowDy="4"
+                android:shadowRadius="1"
+                android:text="--------"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25font_mdp"
+                android:visibility="visible"
+                ads:layout_constraintBottom_toTopOf="@+id/prayerTime"
+                ads:layout_constraintStart_toStartOf="@+id/imageView11" />
+
+            <TextView
+                android:id="@+id/prayerTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="-1"
+                android:shadowDy="4"
+                android:shadowRadius="1"
+                android:text="3:34"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_20font_mdp"
+                android:visibility="visible"
+                ads:layout_constraintBottom_toTopOf="@+id/timer"
+                ads:layout_constraintHorizontal_chainStyle="packed"
+                ads:layout_constraintStart_toStartOf="@+id/prayerName" />
+
+            <TextView
+                android:id="@+id/timeFormat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="-1"
+                android:shadowDy="4"
+                android:shadowRadius="1"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_17font_mdp"
+                ads:layout_constraintBottom_toBottomOf="@+id/prayerTime"
+                ads:layout_constraintStart_toEndOf="@+id/prayerTime"
+                ads:layout_constraintTop_toTopOf="@+id/prayerTime"
+                ads:layout_constraintVertical_bias="0.81" />
+
+            <TextView
+                android:id="@+id/auto"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/noorehuda"
+                android:gravity="center"
+                android:text="بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيْمِ"
+                android:textAlignment="center"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_25font_mdp"
+                android:visibility="visible"
+                ads:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toTopOf="@+id/imageView11" />
+
+            <TextView
+                android:id="@+id/tvLocationMsg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_white"
+                android:paddingStart="5dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="5dp"
+                android:paddingBottom="2dp"
+                android:text="Allow location for prayer times."
+                android:textColor="#515151"
+                android:textSize="14sp"
+                android:visibility="visible"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toBottomOf="@+id/auto" />
+
+            <com.districthut.islam.utils.TimerTextView
+                android:id="@+id/timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                android:shadowColor="@android:color/black"
+                android:shadowDx="-1"
+                android:shadowDy="4"
+                android:shadowRadius="1"
+                android:text="2:00"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_11font_mdp"
+                android:visibility="visible"
+                ads:layout_constraintBottom_toBottomOf="@+id/imageView11"
+                ads:layout_constraintStart_toStartOf="@+id/prayerTime" />
+
+            <TextView
+                android:id="@+id/city"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:drawableLeft="@drawable/ic_location_pin"
+                android:drawablePadding="2dp"
+                android:fontFamily="@font/roboto"
+                android:gravity="center_vertical"
+                android:paddingLeft="3dp"
+                android:paddingTop="2dp"
+                android:paddingRight="3dp"
+                android:paddingBottom="2dp"
+                android:text="Earth"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9font_mdp"
+                ads:layout_constraintBottom_toBottomOf="@+id/timer"
+                ads:layout_constraintEnd_toEndOf="@+id/imageView11" />
+
+            <TextView
+                android:id="@+id/viewAllPrayers"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="8dp"
+                android:fontFamily="@font/roboto_medium"
+                android:gravity="center_vertical"
+                android:paddingLeft="5dp"
+                android:paddingTop="2dp"
+                android:paddingRight="5dp"
+                android:paddingBottom="2dp"
+                android:text="@string/view_all"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_9font_mdp"
+                android:visibility="gone"
+                ads:layout_constraintBottom_toBottomOf="@+id/city"
+                ads:layout_constraintEnd_toEndOf="@+id/imageView11"
+                ads:layout_constraintTop_toTopOf="@+id/city" />
+
+
+            <LinearLayout
+                android:id="@+id/cardView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                ads:cardBackgroundColor="#ffffff"
+                ads:cardCornerRadius="10dp"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintStart_toStartOf="parent"
+                ads:layout_constraintTop_toBottomOf="@+id/imageView11">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+
+
+                    android:layout_marginBottom="10dp">
+
+                    <ImageView
+                        android:id="@+id/duas"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_32mdp"
+                        ads:layout_constraintEnd_toStartOf="@+id/tasbeeh"
+                        ads:layout_constraintHorizontal_bias="0.5"
+                        ads:layout_constraintStart_toStartOf="parent"
+                        ads:layout_constraintTop_toTopOf="parent"
+                        ads:srcCompat="@drawable/dua_icon_small" />
+
+                    <ImageView
+                        android:id="@+id/tasbeeh"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_32mdp"
+                        ads:layout_constraintEnd_toStartOf="@+id/qibla"
+                        ads:layout_constraintHorizontal_bias="0.5"
+                        ads:layout_constraintStart_toEndOf="@+id/duas"
+                        ads:layout_constraintTop_toTopOf="parent"
+                        ads:srcCompat="@drawable/ic_beads" />
+
+                    <ImageView
+                        android:id="@+id/qibla"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_32mdp"
+                        ads:layout_constraintEnd_toStartOf="@+id/quran"
+                        ads:layout_constraintHorizontal_bias="0.5"
+                        ads:layout_constraintStart_toEndOf="@+id/tasbeeh"
+                        ads:layout_constraintTop_toTopOf="parent"
+                        ads:srcCompat="@drawable/ic_qibla" />
+
+                    <ImageView
+                        android:id="@+id/quran"
+                        android:layout_width="0dp"
+                        android:layout_height="@dimen/_32mdp"
+                        ads:layout_constraintEnd_toEndOf="parent"
+                        ads:layout_constraintHorizontal_bias="0.5"
+                        ads:layout_constraintStart_toEndOf="@+id/qibla"
+                        ads:layout_constraintTop_toTopOf="parent"
+                        ads:srcCompat="@drawable/ic_quran" />
+
+                    <TextView
+                        android:id="@+id/duasLbl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Duas"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12font_mdp"
+                        ads:layout_constraintEnd_toEndOf="@+id/duas"
+                        ads:layout_constraintStart_toStartOf="@+id/duas"
+                        ads:layout_constraintTop_toBottomOf="@+id/duas" />
+
+                    <TextView
+                        android:id="@+id/tasbeehLbl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Tasbih"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12font_mdp"
+                        ads:layout_constraintEnd_toEndOf="@+id/tasbeeh"
+                        ads:layout_constraintStart_toEndOf="@+id/duas"
+                        ads:layout_constraintTop_toBottomOf="@+id/tasbeeh" />
+
+                    <TextView
+                        android:id="@+id/textView23"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Qibla"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12font_mdp"
+                        ads:layout_constraintEnd_toEndOf="@+id/qibla"
+                        ads:layout_constraintStart_toEndOf="@+id/tasbeeh"
+                        ads:layout_constraintTop_toBottomOf="@+id/qibla" />
+
+                    <TextView
+                        android:id="@+id/quranLbl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="3dp"
+                        android:fontFamily="@font/roboto_medium"
+                        android:text="Quran"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/_12font_mdp"
+                        ads:layout_constraintEnd_toEndOf="parent"
+                        ads:layout_constraintStart_toEndOf="@+id/qibla"
+                        ads:layout_constraintTop_toBottomOf="@+id/quran" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </LinearLayout>
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/ratingStar"
+                android:layout_width="@dimen/_50mdp"
+                android:layout_height="@dimen/_50mdp"
+                ads:layout_constraintEnd_toEndOf="parent"
+                ads:layout_constraintTop_toTopOf="parent"
+                ads:lottie_autoPlay="true"
+                ads:lottie_rawRes="@raw/star"
+                app:lottie_loop="true" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/prayerTimingGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                ads:constraint_referenced_ids="prayerName,prayerTime,timer" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/locationMessage"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                ads:constraint_referenced_ids="auto,tvLocationMsg" />
+
+            <androidx.constraintlayout.widget.Group
+                android:id="@+id/group"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                ads:constraint_referenced_ids="islamicDate,currentDate,ratingStar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.view.Display;
 import android.view.Surface;
+import android.view.View;
 import android.view.WindowManager;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AlertDialog.Builder;
@@ -34,7 +35,7 @@ public class Compass implements SensorEventListener {
         ((WindowManager) App.getCxt().getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
   }
 
-  private CompassBinding mCompassView;
+  public CompassBinding mCompassView;
   private Float mLastAngle;
   private Qibla mQibla;
 
@@ -54,13 +55,43 @@ public class Compass implements SensorEventListener {
     mCompassView.angleV.setText(text);
     AlertDialog dialog =
         new Builder(mA).setTitle(R.string.qibla).setView(mCompassView.getRoot()).create();
-    AlertDialogFragment.show(mA, dialog, "COMPASS")
-        .setOnDismissListener(
-            d -> {
-              mSensorManager.unregisterListener(this);
-              mCompassView = null;
-              mLastAngle = null;
-            });
+    dialog.show();
+//    AlertDialogFragment.show(mA, dialog, "COMPASS")
+//        .setOnDismissListener(
+//            d -> {
+//              mSensorManager.unregisterListener(this);
+//              mCompassView = null;
+//              mLastAngle = null;
+//            });
+  }
+
+  public View getCompassView() {
+    Sensor aSensor = getAccelerometer();
+    Sensor mSensor = getMagnetometer();
+
+    mSensorManager.registerListener(this, aSensor, SensorManager.SENSOR_DELAY_UI);
+    mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_UI);
+    mCompassView = CompassBinding.inflate(mA.getLayoutInflater());
+    mQibla = new Qibla(SETTINGS.getLngLat());
+    float angle = (float) mQibla.direction;
+    if (angle > 180) {
+      angle -= 360;
+    }
+    String text = String.format(Locale.getDefault(), "%.1f%sN", angle, (char) 176);
+    mCompassView.angleV.setText(text);
+
+    return mCompassView.getRoot();
+
+//    AlertDialog dialog =
+//            new Builder(mA).setTitle(R.string.qibla).setView(mCompassView.getRoot()).create();
+//    dialog.show();
+//    AlertDialogFragment.show(mA, dialog, "COMPASS")
+//        .setOnDismissListener(
+//            d -> {
+//              mSensorManager.unregisterListener(this);
+//              mCompassView = null;
+//              mLastAngle = null;
+//            });
   }
 
   public Sensor getAccelerometer() {

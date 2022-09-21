@@ -1,362 +1,320 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.mirfatif.noorulhuda.ui.base.MyLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-  xmlns:tools="http://schemas.android.com/tools"
-  android:layout_width="match_parent"
-  android:layout_height="match_parent"
-  android:orientation="vertical">
-
-  <View
-    android:layout_width="match_parent"
-    android:layout_height="1dp"
-    android:background="?attr/accent" />
-
-  <androidx.core.widget.NestedScrollView
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_marginBottom="8dp"
-    android:scrollbars="vertical">
+    tools:context="com.districthut.islam.Activities.About">
 
-    <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-      android:layout_width="match_parent"
-      android:layout_height="wrap_content"
-      android:layout_marginTop="8dp"
-      android:layout_marginStart="8dp"
-      android:layout_marginEnd="8dp"
-      android:orientation="vertical">
-
-      <ImageView
-        android:id="@+id/icon"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:src="?attr/app_icon"
-        tools:ignore="ContentDescription" />
-
-      <TextView
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="2dp"
-        android:layout_gravity="center_horizontal"
-        android:fontFamily="@font/uthmanic_hafs1_ver17"
-        android:text="@string/app_name"
-        android:textSize="18sp" />
-
-      <TextView
-        android:id="@+id/version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="2dp"
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:layout_marginBottom="8dp"
-        android:layout_gravity="center_horizontal" />
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/third_party_res"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/tnc"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/third_party_res" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/third_party_res_summary" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/contact"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/email"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/email" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/email_address" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/telegram"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/telegram"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/telegram_group" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/telegram_link" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/source_code"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/github_mark"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/source" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/source_url" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/issues"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/issues"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/report_issues" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/report_issues_summary" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/logging"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/log"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            android:id="@+id/logging_title"
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/collect_logs" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/collect_logs_summary" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/rating"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/star"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/app_rating" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/app_rating_summary" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/privacy_policy"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/privacy_policy"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/privacy_policy" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="@string/privacy_policy_link" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/translate"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/language"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/translations" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/translations_summary" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/share_app"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/share"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/share" />
-
-          <TextView
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/share_summary" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-      <com.mirfatif.noorulhuda.ui.base.MyLinearLayout
-        android:id="@+id/check_update"
-        style="@style/AboutActivityItemContainer">
-
-        <ImageView
-          style="@style/AboutActivityIconImg"
-          android:src="@drawable/update"
-          tools:ignore="ContentDescription" />
-
-        <com.mirfatif.noorulhuda.ui.base.MyLinearLayout style="@style/AboutActivityItemTextBox">
-
-          <TextView
-            style="@style/AboutActivityItemTitle"
-            android:text="@string/update" />
-
-          <TextView
-            android:id="@+id/check_update_summary"
-            style="@style/AboutActivityItemSummary"
-            android:text="@string/update_summary" />
-
-        </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-      </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-
-      <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="?attr/accent" />
-
-    </com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
-  </androidx.core.widget.NestedScrollView>
-</com.mirfatif.noorulhuda.ui.base.MyLinearLayout>
+        android:layout_marginEnd="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        tools:layout_constraintBottom_creator="1"
+        tools:layout_constraintLeft_creator="1"
+        tools:layout_constraintRight_creator="1"
+        tools:layout_constraintTop_creator="1"
+        android:id="@+id/linearLayout2">
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+            app:layout_constraintLeft_toLeftOf="@+id/linearLayout2"
+            app:layout_constraintRight_toLeftOf="@+id/linearLayout2"
+            app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+            tools:layout_constraintBottom_creator="1"
+            tools:layout_constraintLeft_creator="1"
+            tools:layout_constraintRight_creator="1"
+            tools:layout_constraintTop_creator="1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/catborder"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal"
+                        android:paddingBottom="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView2"
+                            android:layout_width="64dp"
+                            android:layout_height="64dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_weight="0.10"
+                            app:srcCompat="@mipmap/ic_launcher" />
+
+                        <TextView
+                            android:id="@+id/textView5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/app_name"
+                            android:textColor="@color/darkgrey"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/catborder"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/instructions"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Developer: Mian Asad Ali"
+                        android:textAlignment="center"
+                        android:textColor="@color/darkgrey"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/contribution"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/contribution"
+                        android:textAlignment="center"
+                        android:textColor="@color/darkgrey" />
+
+                    <TextView
+                        android:id="@+id/textView16"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="If you find any mistake in Translations or References please contact me and do Sadka e Jarya. \nJazakAllah Khair"
+                        android:textAlignment="center" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/catborder"
+                    android:clickable="false"
+                    android:orientation="vertical"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+                    app:layout_constraintLeft_toLeftOf="@+id/linearLayout2"
+                    app:layout_constraintRight_toLeftOf="@+id/linearLayout2"
+                    app:layout_constraintTop_toTopOf="@+id/linearLayout2"
+                    tools:layout_constraintBottom_creator="1"
+                    tools:layout_constraintLeft_creator="1"
+                    tools:layout_constraintRight_creator="1"
+                    tools:layout_constraintTop_creator="1">
+
+                    <LinearLayout
+                        android:id="@+id/facebookLink"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="0dp"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView4"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            app:srcCompat="@drawable/facebook" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView11"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:text="Facebook"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/textView12"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:text="\@mianasadalii"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/twitterLink"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView10"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            app:srcCompat="@drawable/twitter" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView21"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:text="Twitter"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/textView42"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:text="\@mianasadali"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/websiteLink"
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal"
+                        android:orientation="horizontal"
+                        android:padding="10dp">
+
+                        <ImageView
+                            android:id="@+id/imageView20"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            app:srcCompat="@drawable/browser" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/textView50"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:text="Website"
+                                android:textColor="@color/darkgrey"
+                                android:textSize="24sp" />
+
+                            <TextView
+                                android:id="@+id/textView80"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="40dp"
+                                android:text="www.mianasad.com"
+                                android:textSize="18sp" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/reviewLink"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/catborder"
+                    android:clickable="true"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView3"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            app:srcCompat="@drawable/staractive" />
+
+                        <TextView
+                            android:id="@+id/textView9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="Leave a review"
+                            android:textColor="@color/darkgrey"
+                            android:textSize="24sp" />
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/shareLink"
+                    android:layout_width="match_parent"
+
+                    android:layout_height="match_parent"
+                    android:background="@drawable/catborder"
+                    android:orientation="vertical"
+                    android:padding="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="32dp"
+                            android:layout_height="32dp"
+                            app:srcCompat="@drawable/ic_menu_share" />
+
+                        <TextView
+                            android:id="@+id/textView10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:text="Share with friends"
+                            android:textColor="@color/darkgrey"
+                            android:textSize="24sp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+        </ScrollView>
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

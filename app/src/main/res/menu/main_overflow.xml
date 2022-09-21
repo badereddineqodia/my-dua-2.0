@@ -91,15 +91,18 @@
       android:title="@string/supplications_menu_item" />
   </group>
 
-  <group android:id="@+id/group5">
+  <group android:id="@+id/group5"
+      android:visible="false">
     <item
       android:id="@+id/action_backup_restore"
       android:icon="@drawable/backup_restore"
+        android:visible="false"
       android:title="@string/backup_restore_menu_item" />
 
     <item
       android:id="@+id/action_about"
       android:icon="@drawable/info"
+        android:visible="false"
       android:title="@string/about_menu_item" />
   </group>
 

@@ -7,3 +7,4 @@ include ':time4j-android'
 project(':time4j-android').projectDir = new File('Time4A/time4j-android')
 
 include ':app'
+include ':beads'

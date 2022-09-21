@@ -20,6 +20,7 @@ import com.google.android.material.tabs.TabLayoutMediator.TabConfigurationStrate
 import com.mirfatif.noorulhuda.App;
 import com.mirfatif.noorulhuda.BuildConfig;
 import com.mirfatif.noorulhuda.databinding.ActivityDuaBinding;
+import com.mirfatif.noorulhuda.databinding.ActivityDuasBinding;
 import com.mirfatif.noorulhuda.db.DbBuilder;
 import com.mirfatif.noorulhuda.dua.DuasAdapter.Dua;
 import com.mirfatif.noorulhuda.quran.MainActivity;
@@ -27,7 +28,7 @@ import com.mirfatif.noorulhuda.ui.base.BaseActivity;
 
 public class DuaActivity extends BaseActivity {
 
-  private ActivityDuaBinding mB;
+  private ActivityDuasBinding mB;
   private DuaPageAdapter mDuaPageAdapter;
 
   @Override
@@ -43,7 +44,7 @@ public class DuaActivity extends BaseActivity {
       return;
     }
 
-    mB = ActivityDuaBinding.inflate(getLayoutInflater());
+    mB = ActivityDuasBinding.inflate(getLayoutInflater());
     setContentView(mB.getRoot());
 
     ActionBar actionbar = getSupportActionBar();
