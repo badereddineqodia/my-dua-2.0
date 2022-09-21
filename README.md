@@ -43,15 +43,6 @@ More:
 * **WAKE_LOCK** is required to play Adhan alarm.
 * **RECEIVE_BOOT_COMPLETED** is required to reset alarms (for Prayer notifications and Adhan) when device is restarted.
 
-## Privacy Policy
-
-https://mirfatif.github.io/NoorUlHuda/privacy_policy.html
-
-## Screenshots
-
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/1.jpg" width="250"> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/2.jpg" width="250"> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/3.jpg" width="250">
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/4.jpg" width="250"> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/5.jpg" width="250"> <img src="fastlane/metadata/android/en-US/images/phoneScreenshots/6.jpg" width="250">
-<img src="fastlane/metadata/android/en-US/images/phoneScreenshots/7.jpg" width="250">
 
 ## Translations [![Crowdin](https://badges.crowdin.net/nuh/localized.svg)](https://crowdin.com/project/nuh)
 [Crowdin](https://crowdin.com/project/nuh)
@@ -101,8 +92,4 @@ You **CANNOT** use and distribute the app icon in anyway, except for **Noor Ul H
     You should have received a copy of the Affero GNU General Public License
     along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-## Contact Us
 
-**Telegram:** [https://t.me/NoorUlHudaApp](https://t.me/NoorUlHudaApp)  
-**XDA Thread:** [https://forum.xda-developers.com...](https://forum.xda-developers.com/t/app-7-0-noor-ul-huda-nur-alxd-quran-reader-prayer-time-and-duas-app.4306203/)  
-**Email:** [mirfatif@gmail.com](mailto:mirfatif@gmail.com)
